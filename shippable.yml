@@ -1,0 +1,13 @@
+language: java
+
+jdk:
+  - oraclejdk7
+  - openjdk7
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+script:
+  - mvn clean cobertura:cobertura
+  - mvn test
+notifications:
+  email: false
