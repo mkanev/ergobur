@@ -1,6 +1,6 @@
 [global]
-ApplicationName=My First Elastic Beanstalk Application
+ApplicationName=ErgoBur
 DevToolsEndpoint=git.elasticbeanstalk.eu-west-1.amazonaws.com
-EnvironmentName=erbu-env
+EnvironmentName=erbu-staging
 Region=eu-west-1
 ServiceEndpoint=https://elasticbeanstalk.eu-west-1.amazonaws.com

@@ -26,6 +26,6 @@ after_success:
   - git add -f META-INF WEB-INF
   - git commit -m "Deploy"
   - $EB_TOOLS/AWSDevTools/Linux/AWSDevTools-RepositorySetup.sh
-  - export PATH=$PATH:$EB_TOOLS/eb/linux/python2.7/ && pip install boto==2.14.0 && eb push
+  - export PATH=$PATH:$EB_TOOLS/eb/linux/python2.7/ && pip install boto==2.32.0 && git aws.push
 notifications:
   email: false
