@@ -20,7 +20,7 @@ script:
   - mvn test
 after_success:
   - mvn compile war:exploded
-  - cp -r target/App/* ./
+  - cp -r target/webapp-0.1-SNAPSHOT/* ./
   - git add -f META-INF WEB-INF
   - git commit -m "Deploy"
   - $EB_TOOLS/AWSDevTools/Linux/AWSDevTools-RepositorySetup.sh
