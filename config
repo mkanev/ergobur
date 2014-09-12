@@ -1,0 +1,6 @@
+[global]
+ApplicationName=My First Elastic Beanstalk Application
+DevToolsEndpoint=git.elasticbeanstalk.eu-west-1.amazonaws.com
+EnvironmentName=erbu-env
+Region=eu-west-1
+ServiceEndpoint=https://elasticbeanstalk.eu-west-1.amazonaws.com

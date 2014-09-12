@@ -1,13 +1,29 @@
 language: java
-
+env:
+  global:
+    - EB_TOOLS_DIR=/tmp/eb_tools EB_VERSION=AWS-ElasticBeanstalk-CLI-2.6.3 EB_TOOLS=$EB_TOOLS_DIR/$EB_VERSION
+    - secure: 1yVzrHCz/yU8ZsX9qmnVYJahd+J6kG+v0dWjI2e8
 jdk:
   - oraclejdk7
   - openjdk7
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
+  - if [ ! -e $EB_TOOLS ]; then wget -q -O /tmp/eb.zip https://s3.amazonaws.com/elasticbeanstalk/cli/$EB_VERSION.zip && mkdir -p $EB_TOOLS_DIR && unzip /tmp/eb.zip -d $EB_TOOLS_DIR; fi
+  - mkdir -p ~/.elasticbeanstalk
+  - echo 'AWSAccessKeyId=AKIAJXFVTKMUEJDHGROA' >> ~/.elasticbeanstalk/aws_credential_file
+  - echo 'AWSSecretKey='$AWSSecretKey >> ~/.elasticbeanstalk/aws_credential_file
 script:
+  - mkdir -p .elasticbeanstalk
+  - cp config .elasticbeanstalk/
   - mvn clean cobertura:cobertura
   - mvn test
+after_success:
+  - mvn compile war:exploded
+  - cp -r target/App/* ./
+  - git add -f META-INF WEB-INF
+  - git commit -m "Deploy"
+  - $EB_TOOLS/AWSDevTools/Linux/AWSDevTools-RepositorySetup.sh
+  - export PATH=$PATH:$EB_TOOLS/eb/linux/python2.7/ && pip install boto==2.14.0 && eb push
 notifications:
   email: false
