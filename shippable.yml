@@ -1,7 +1,9 @@
 language: java
 env:
   global:
-    - EB_TOOLS_DIR=/tmp/eb_tools EB_VERSION=AWS-ElasticBeanstalk-CLI-2.6.3 EB_TOOLS=$EB_TOOLS_DIR/$EB_VERSION
+    - EB_TOOLS_DIR=/tmp/eb_tools
+    - EB_VERSION=AWS-ElasticBeanstalk-CLI-2.6.3
+    - EB_TOOLS=$EB_TOOLS_DIR/$EB_VERSION
     - secure: 1yVzrHCz/yU8ZsX9qmnVYJahd+J6kG+v0dWjI2e8
 jdk:
   - oraclejdk7
