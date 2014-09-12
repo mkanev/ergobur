@@ -8,6 +8,9 @@ env:
 jdk:
   - oraclejdk7
   - openjdk7
+branches:
+  only:
+    - develop
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
