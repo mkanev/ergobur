@@ -11,6 +11,7 @@ jdk:
 branches:
   only:
     - develop
+    - master
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
@@ -29,6 +30,6 @@ after_success:
   - git add * -f
   - git commit -m "Deploy"
   - $EB_TOOLS/AWSDevTools/Linux/AWSDevTools-RepositorySetup.sh
-  - export PATH=$PATH:$EB_TOOLS/eb/linux/python2.7/ && pip install boto==2.32.0 && git aws.push --environment erbu-staging
+  - export PATH=$PATH:$EB_TOOLS/eb/linux/python2.7/ && pip install boto==2.32.0 && git aws.push
 notifications:
   email: false

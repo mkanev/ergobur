@@ -15,7 +15,19 @@ ServiceEndpoint=https://elasticbeanstalk.eu-west-1.amazonaws.com
 SolutionStack=64bit Amazon Linux 2014.03 v1.0.4 running Tomcat 7 Java 7
 
 [branches]
+develop=ErgoBureau-develop-env
 master=ErgoBureau-master-env
+
+[branch:develop]
+ApplicationVersionName=Sample Application
+EnvironmentName=ErgoBureau-develop-env
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=E:\modules\ergobur\.elasticbeanstalk\optionsettings.ErgoBureau-develop-env
+RdsDeletionPolicy=Snapshot
+RdsEnabled=Yes
+RdsSourceSnapshotName=
 
 [branch:master]
 ApplicationVersionName=Sample Application
