@@ -1,0 +1,34 @@
+language: java
+env:
+  global:
+    - EB_TOOLS_DIR=/tmp/eb_tools
+    - EB_VERSION=AWS-ElasticBeanstalk-CLI-2.6.3
+    - EB_TOOLS=$EB_TOOLS_DIR/$EB_VERSION
+    - secure: D0QkZtmRSOORSXiBATPsysFATebU93h7kMGG4SbWE6LDFIUuxQKck8k8KIAOL/taQ6Ih4SjgcQkMVSe+pddeWaniS/SC6p7gFJPRxdjrCUh3y3yE1KIv2mTwr4QFQY3v1gEqclrwMn7FGp6+t4LDgH/S3WAchx57zLDZTzngl6e6wAgNea0blKRAXzcd5dEypwbIZlTh+RQ3X3FyxZ5+pMCDGrAo46jD9t9i1ffE9BiVYRJX1EPzU2edtTrJmGlgmwFCtKGgQL6/x47r3zfRlKQCtxwsd1cPj4yWH+KQ+tqGHjguritFKi+VBJ7TwEe/gzsKk/MKI9KD0o8JKdYMgA==
+jdk:
+  - oraclejdk7
+branches:
+  only:
+    - develop
+    - master
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+  - if [ ! -e $EB_TOOLS ]; then wget -q -O /tmp/eb.zip https://s3.amazonaws.com/elasticbeanstalk/cli/$EB_VERSION.zip && mkdir -p $EB_TOOLS_DIR && unzip /tmp/eb.zip -d $EB_TOOLS_DIR; fi
+  - mkdir -p ~/.elasticbeanstalk
+  - echo 'AWSAccessKeyId=AKIAJXFVTKMUEJDHGROA' >> ~/.elasticbeanstalk/aws_credential_file
+  - echo 'AWSSecretKey='$AWSSecretKey >> ~/.elasticbeanstalk/aws_credential_file
+script:
+  - mkdir -p .elasticbeanstalk
+  - cp config .elasticbeanstalk/
+  - mvn clean cobertura:cobertura
+  - mvn test
+after_success:
+  - mvn compile war:exploded
+  - cp -r target/webapp-1.0.0/* ./
+  - git add * -f
+  - git commit -m "Deploy"
+  - $EB_TOOLS/AWSDevTools/Linux/AWSDevTools-RepositorySetup.sh
+  - export PATH=$PATH:$EB_TOOLS/eb/linux/python2.7/ && pip install boto==2.32.0 && git aws.push
+notifications:
+  email: false

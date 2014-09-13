@@ -13,5 +13,7 @@ node_modules
 src/main/webapp/dist
 .gradle
 build
-
-.elasticbeanstalk/
+
+shippable/
+.elasticbeanstalk/
+*.orig
