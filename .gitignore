@@ -16,3 +16,4 @@ build
 
 shippable
 .elasticbeanstalk/
+*.orig
