@@ -7,7 +7,6 @@ env:
     - secure: D0QkZtmRSOORSXiBATPsysFATebU93h7kMGG4SbWE6LDFIUuxQKck8k8KIAOL/taQ6Ih4SjgcQkMVSe+pddeWaniS/SC6p7gFJPRxdjrCUh3y3yE1KIv2mTwr4QFQY3v1gEqclrwMn7FGp6+t4LDgH/S3WAchx57zLDZTzngl6e6wAgNea0blKRAXzcd5dEypwbIZlTh+RQ3X3FyxZ5+pMCDGrAo46jD9t9i1ffE9BiVYRJX1EPzU2edtTrJmGlgmwFCtKGgQL6/x47r3zfRlKQCtxwsd1cPj4yWH+KQ+tqGHjguritFKi+VBJ7TwEe/gzsKk/MKI9KD0o8JKdYMgA==
 jdk:
   - oraclejdk7
-  - openjdk7
 branches:
   only:
     - develop
