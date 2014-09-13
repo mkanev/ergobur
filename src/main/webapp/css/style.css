@@ -345,15 +345,19 @@ input[type="color"]:focus,
 }
 
 .navbar-brand {
-    padding: 0;
+    padding: 5px 0 0 21px !important;
+    color: #FFF;
 }
 
 .navbar-brand img {
     margin-top: 7px;
 }
 
+.navbar-brand:hover,
+.navbar-brand:active,
 .navbar-brand:focus {
     outline: 0;
+    color: #FFF;
 }
 
 /*========================================================================*/
@@ -816,6 +820,7 @@ input[type="color"]:focus,
     margin-bottom: 15px;
     font-size: 21px;
     text-transform: none;
+    min-height: 46px;
 }
 
 /*========================================================================*/
@@ -1764,6 +1769,10 @@ footer ul.footer-social li:last-child a {
         margin-top: 20px;
     }
 
+    .navbar-brand {
+        padding-top: 14px !important;
+    }
+
     .slide-content {
         height: auto;
     }
@@ -1774,6 +1783,10 @@ footer ul.footer-social li:last-child a {
 
     .intro-btn-main {
         margin-top: 28px;
+    }
+
+    .contact-detail {
+        text-align: left;
     }
 
     .contact-text {

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="ErgoBureauApp">
 <head>
     <meta charset="utf-8">
-    <title>Makers - One Page agency &amp; Portfolio Template</title>
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <title>Бюро Эргономики и Человеческого Фактора</title>
+    <meta name="author" content="Бюро Эргономики и Человеческого Фактора">
+    <meta name="keywords" content="эргономика,эргономика рабочего места,эргономика человека,эргономика труда,эргономика пространства,эргономика мебели,эргономика среды,эргономичный дом,эргономичный офис,эргономическое рабочее место,эргономическое обеспечение,эргономическое проектирование">
+    <meta name="description" content="Бюро Эргономики и Человеческого Фактора разрабатывает и внедряет реальные эргономические проекты в различные сферы деятельности. Наши практические решения обеспечивают безопасность, комфорт и повышают эффективность процессов.">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,6 +29,23 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-54768184-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 <body data-spy="scroll" data-target=".navbar-custom">
 
@@ -60,9 +77,9 @@
                 <h2>We are Creative</h2>
             </div>
         </div>
-        <p>SPECIAL THEME FOR FREELANCER, <br/>PHOTOGRAPHER, WEB AGENCY &amp; CORPORATE. </p>
+        <p>SPECIAL THEME FOR FREELANCER, <br/>PHOTOGRAPHER, WEB AGENCY &amp; CORPORATE.</p>
 
-        <div class="intro-btn-main page-scroll"><a class="intro-btn" href="#services">What we do</a></div>
+        <div class="intro-btn-main page-scroll"><a class="intro-btn" href="#services">Что мы умеем</a></div>
     </div>
 </div>
 <!--End Slider -->
@@ -76,28 +93,29 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="index.html">
-                    <img src="images/logo.png" alt="logo">
+                    <div style="font-size: 1.2em;">Бюро Эргономики</div>
+                    <div style="font-size: 0.85em;">и Человеческого Фактора</div>
                 </a>
             </div>
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <li class="page-scroll active">
-                        <a href="#home">Home</a>
+                        <a href="#home">Главная</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <a href="#about">О нас</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#works">Work</a>
+                        <a href="#works">Работы</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#services">Services</a>
+                        <a href="#services">Услуги</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#blog">Blog</a>
+                        <a href="#blog">Блог</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                        <a href="#contact">Контакты</a>
                     </li>
                 </ul>
             </div>
@@ -115,16 +133,17 @@
             <!--Start heading-->
             <div class="col-md-offset-2 col-md-8">
                 <div class="section-header">
-                    <h2 class="smt"><span>About us</span></h2>
+                    <h2 class="smt"><span>О нас</span></h2>
                 </div>
             </div>
             <!--End heading-->
             <div class="col-md-6">
                 <div class="about-detail">
-                    <p class="lead">Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
+                    <p class="lead">Бюро Эргономики и Человеческого Фактора разрабатывает и внедряет реальные эргономические проекты в различные сферы деятельности. Наши практические решения
+                        обеспечивают безопасность, комфорт и повышают эффективность процессов.</p>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non blandit nibh. Sed eget tortor tincidunt, auctor sem eget, mollis nisi. Pellentesque ipsum erat, facilisis
-                        ut venenatis eu, sodales vel dolor fusce diam ornare.</p>
+                    <p>Наша компания оказывает услуги эргономического консалтинга и комплексного изучения влияния человеческого фактора. Мы проводим эргономические экспертизы, проектируем и
+                        перепроектируем, занимаеся адаптацией и аудитом в следующих областях:</p>
 
                     <div class="panel-group" id="accordion">
                         <!--About accordion #1-->
@@ -132,7 +151,7 @@
                             <div class="panel-heading collapsed" data-toggle="collapse"
                                  data-parent="#accordion" data-target="#collapseOne">
                                 <h6 class="panel-title accordion-toggle">
-                                    Photography
+                                    Офисная эргономика
                                 </h6>
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse">
@@ -157,7 +176,7 @@
                             <div class="panel-heading collapsed" data-toggle="collapse"
                                  data-parent="#accordion" data-target="#collapseTwo">
                                 <h6 class="panel-title accordion-toggle">
-                                    Web Designing
+                                    Производственная эргономика
                                 </h6>
                             </div>
                             <div id="collapseTwo" class="panel-collapse collapse">
@@ -182,7 +201,7 @@
                             <div class="panel-heading collapsed" data-toggle="collapse"
                                  data-parent="#accordion" data-target="#collapseThree">
                                 <h6 class="panel-title accordion-toggle">
-                                    Web Development
+                                    Жилая среда
                                 </h6>
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse">
@@ -207,7 +226,7 @@
                             <div class="panel-heading collapsed" data-toggle="collapse"
                                  data-parent="#accordion" data-target="#collapseFour">
                                 <h6 class="panel-title accordion-toggle">
-                                    Responsive Design
+                                    Общественные пространства
                                 </h6>
                             </div>
                             <div id="collapseFour" class="panel-collapse collapse">
@@ -255,7 +274,7 @@
             <!--Start heading-->
             <div class="col-md-offset-2 col-md-8">
                 <div class="section-header">
-                    <h2 class="smt"><span>Portfolio</span></h2>
+                    <h2 class="smt"><span>Примеры работ</span></h2>
                 </div>
             </div>
             <!--End heading-->
@@ -394,7 +413,7 @@
             <!--Start heading-->
             <div class="col-md-offset-2 col-md-8">
                 <div class="section-header">
-                    <h2 class="smt"><span>fun facts</span></h2>
+                    <h2 class="smt"><span>это интересно</span></h2>
                 </div>
             </div>
             <!--End heading-->
@@ -451,7 +470,7 @@
             <!--Start heading-->
             <div class="col-md-offset-2 col-md-8">
                 <div class="section-header">
-                    <h2 class="smt"><span>Services</span></h2>
+                    <h2 class="smt"><span>Услуги и направления</span></h2>
                 </div>
             </div>
             <!--End heading-->
@@ -462,7 +481,7 @@
                         <i class="fa fa-camera-retro"></i>
                     </div>
                     <div class="service-info">
-                        <h4>Design & UX</h4>
+                        <h4>Рабочие места</h4>
 
                         <p>Working with us you will work with professional certified designers and engineers having the experience.</p>
                     </div>
@@ -476,7 +495,7 @@
                         <i class="fa fa-leaf"></i>
                     </div>
                     <div class="service-info">
-                        <h4>Fresh Design</h4>
+                        <h4>Оборудование и устройства</h4>
 
                         <p>Working with us you will work with professional certified designers and engineers having the experience.</p>
                     </div>
@@ -490,7 +509,7 @@
                         <i class="fa fa-codepen"></i>
                     </div>
                     <div class="service-info">
-                        <h4>Web Developing</h4>
+                        <h4>Навигация и указатели</h4>
 
                         <p>Working with us you will work with professional certified designers and engineers having the experience.</p>
                     </div>
@@ -504,7 +523,7 @@
                         <i class="fa fa-camera-retro"></i>
                     </div>
                     <div class="service-info">
-                        <h4>Photography</h4>
+                        <h4>Обучение и развитие</h4>
 
                         <p>Working with us you will work with professional certified designers and engineers having the experience.</p>
                     </div>
@@ -518,7 +537,7 @@
                         <i class="fa fa-rocket"></i>
                     </div>
                     <div class="service-info">
-                        <h4>Responsive Design</h4>
+                        <h4>Эргономические риски</h4>
 
                         <p>Working with us you will work with professional certified designers and engineers having the experience.</p>
                     </div>
@@ -532,7 +551,7 @@
                         <i class="fa fa-film"></i>
                     </div>
                     <div class="service-info">
-                        <h4>Multimedia</h4>
+                        <h4>Инструкции и сертификаты</h4>
 
                         <p>Working with us you will work with professional certified designers and engineers having the experience.</p>
                     </div>
@@ -547,7 +566,7 @@
                         <i class="fa fa-pencil"></i>
                     </div>
                     <div class="service-info">
-                        <h4>Creative Ideas</h4>
+                        <h4>Ограниченные возможности</h4>
 
                         <p>Working with us you will work with professional certified designers and engineers having the experience.</p>
                     </div>
@@ -561,7 +580,7 @@
                         <i class="fa fa fa-cog"></i>
                     </div>
                     <div class="service-info">
-                        <h4>Easy Customizable</h4>
+                        <h4>Все остальное</h4>
 
                         <p>Working with us you will work with professional certified designers and engineers having the experience.</p>
                     </div>
@@ -582,7 +601,7 @@
             <!--Start heading-->
             <div class="col-md-offset-2 col-md-8">
                 <div class="section-header">
-                    <h2 class="smt"><span>Testimonial</span></h2>
+                    <h2 class="smt"><span>Отзывы</span></h2>
                 </div>
             </div>
             <!--End heading-->
@@ -648,7 +667,7 @@
             <!--Start heading-->
             <div class="col-md-offset-2 col-md-8">
                 <div class="section-header">
-                    <h2 class="smt"><span>Blog</span></h2>
+                    <h2 class="smt"><span>Блог</span></h2>
                 </div>
             </div>
             <!--End heading-->
@@ -830,19 +849,18 @@
             <!--Start heading-->
             <div class="col-md-offset-2 col-md-8">
                 <div class="section-header">
-                    <h2 class="smt"><span>Contact</span></h2>
+                    <h2 class="smt"><span>Контакты</span></h2>
                 </div>
             </div>
             <!--End heading-->
             <div class="col-md-8 col-md-offset-2 text-center contact-form">
                 <form method="post">
-                    <input type="text" class="form-control" id="name" placeholder="Full Name">
-                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                    <textarea class="form-control" id="message" rows="7" placeholder="Your Message"></textarea>
+                    <input type="text" class="form-control" id="name" placeholder="ФИО">
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <textarea class="form-control" id="message" rows="7" placeholder="Сообщение"></textarea>
 
                     <div>
-                        <button type="submit" class="btn btn-default">Send Message</button>
+                        <button type="submit" class="btn btn-default">Отправить</button>
                     </div>
                 </form>
             </div>
@@ -902,7 +920,7 @@
                 <!-- End footer social -->
 
                 <!-- footer copyright text -->
-                <p>Copyright &copy; 2014 All reserved by: <a href="#" title="copyright">Makers</a></p>
+                <p>Все права защищены &copy; 2014 <a href="index.html" title="copyright">Бюро Эргономики и Человеческого Фактора</a></p>
                 <!-- end of the footer copyright text -->
             </div>
         </div>
@@ -922,7 +940,13 @@
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script type="text/javascript" src="js/jquery.sticky.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mixitup/1.5.6/jquery.mixitup.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/restangular/1.4.0/restangular.min.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
+<script type="text/javascript" src="js/directives.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 
 <script>
     /* Home background slider */
