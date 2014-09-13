@@ -1,0 +1,30 @@
+[global]
+ApplicationName=ErgoBureau
+AwsCredentialFile=C:\Users\Maksim\.elasticbeanstalk\aws_credential_file
+DevToolsEndpoint=git.elasticbeanstalk.eu-west-1.amazonaws.com
+EnvironmentName=ErgoBureau-env
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=E:\modules\ergobur\.elasticbeanstalk\optionsettings.ErgoBureau-env
+RdsDeletionPolicy=Snapshot
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+Region=eu-west-1
+ServiceEndpoint=https://elasticbeanstalk.eu-west-1.amazonaws.com
+SolutionStack=64bit Amazon Linux 2014.03 v1.0.4 running Tomcat 7 Java 7
+
+[branches]
+master=ErgoBureau-master-env
+
+[branch:master]
+ApplicationVersionName=Sample Application
+EnvironmentName=ErgoBureau-master-env
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=E:\modules\ergobur\.elasticbeanstalk\optionsettings.ErgoBureau-master-env
+RdsDeletionPolicy=Snapshot
+RdsEnabled=Yes
+RdsSourceSnapshotName=
+

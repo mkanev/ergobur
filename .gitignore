@@ -15,4 +15,4 @@ src/main/webapp/dist
 build
 
 shippable
-.elasticbeanstalk
+.elasticbeanstalk/
