@@ -940,6 +940,14 @@ input[type="color"]:focus,
     font-size: 16px;
 }
 
+.testimonial-person-title {
+    display: block;
+    color: #FFF;
+    font-weight: 300;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
 /*========================================================================*/
 /*  Team
 /*========================================================================*/
