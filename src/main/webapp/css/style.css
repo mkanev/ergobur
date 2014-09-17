@@ -1495,7 +1495,8 @@ li.comment ol.comment-sub {
     margin-bottom: 30px;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     width: 70%;
 }
 
@@ -1592,6 +1593,14 @@ footer ul.footer-social li:last-child a {
 /*   Media queries
 /*========================================================================*/
 
+@media only screen and (min-width: 1051px) and (max-width: 1280px) {
+
+    #owl-main-text {
+        height: 125px;
+        margin-bottom: 48px;
+    }
+
+}
 @media only screen and (min-width: 960px) and (max-width: 1050px) {
 
     #owl-main-text h2 {
@@ -1601,7 +1610,7 @@ footer ul.footer-social li:last-child a {
 
     #owl-main-text {
         height: 125px;
-        margin-bottom: -30px;
+        margin-bottom: 48px;
     }
 
 }
@@ -1790,7 +1799,12 @@ footer ul.footer-social li:last-child a {
     }
 
     .intro-btn-main {
-        margin-top: 28px;
+        margin-top: 48px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 90%;
     }
 
     .contact-detail {
