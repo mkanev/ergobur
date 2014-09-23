@@ -9,7 +9,6 @@ jdk:
   - oraclejdk7
 branches:
   only:
-    - develop
     - master
 before_script:
   - mkdir -p shippable/testresults
