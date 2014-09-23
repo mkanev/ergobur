@@ -24,7 +24,7 @@ script:
   - mvn test
 after_success:
   - mvn compile war:exploded
-  - cp -r target/webapp-1.3.5/* ./
+  - cp -r target/webapp-1.3.6/* ./
   - git add * -f
   - git commit -m "Deploy"
   - $EB_TOOLS/AWSDevTools/Linux/AWSDevTools-RepositorySetup.sh
