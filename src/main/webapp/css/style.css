@@ -1231,6 +1231,12 @@ input[type="color"]:focus,
     margin-bottom: 25px;
 }
 
+.post-description p.media-info {
+    text-align: right;
+    font-size: smaller;
+    margin-bottom: 5px;
+}
+
 blockquote {
     display: block;
     padding: 5px 15px;
