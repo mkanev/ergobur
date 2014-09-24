@@ -1,82 +1,18 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Бюро Эргономики и Человеческого Фактора</title>
-    <meta name="author" content="Бюро Эргономики и Человеческого Фактора">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!--Favicons -->
-    <link rel="shortcut icon" href="images/favicon.png">
-
-    <!--styles -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,400italic,500,500italic,700,700italic,900,900italic,300' rel='stylesheet' type='text/css'>
-
-    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+<html ng-app="ErgoBureauApp" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
 <body data-spy="scroll" data-target=".navbar-custom">
 
 <!--Start Page loader -->
 <div id="pageloader">
     <div class="loader">
-        <img src="images/progress.gif" alt='loader'/>
+        <img th:src="@{/images/progress.gif}" alt='loader'/>
     </div>
 </div>
 <!--End Page loader -->
 
 <!--Start Navigation-->
-<div class="navigation">
-    <nav class="navbar navbar-custom navbar-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <div style="font-size: 1.2em;">Бюро Эргономики</div>
-                    <div style="font-size: 0.85em;">и Человеческого Фактора</div>
-                </a>
-            </div>
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="page-scroll active">
-                        <a href="/index.html#home">Главная</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="/index.html#about">О нас</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="/index.html#works">Работы</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="/index.html#services">Услуги</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="/index.html#blog">Блог</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="/index.html#contact">Контакты</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /navbar-collapse -->
-        </div>
-        <!-- /container -->
-    </nav>
-</div>
+<div th:replace="layout :: navigation"></div>
 <!--End Navigation-->
 
 <!-- page-header -->
@@ -117,7 +53,7 @@
                         </p>
 
                         <div class="post-img">
-                            <img src="images/blog/blog1/preview/img1.png" alt="">
+                            <img th:src="@{/images/blog/blog1/preview/img1.png}" alt=""/>
                         </div>
                         <p>
                             В мире осталось всего два таких: один в Манчестере, другой в Лондоне.
@@ -126,7 +62,7 @@
                         </p>
 
                         <div class="post-img">
-                            <img src="images/blog/blog1/preview/img2.png" alt="">
+                            <img th:src="@{/images/blog/blog1/preview/img2.png}" alt=""/>
                         </div>
                         <p>
                             Попытаемся взглянуть на него с точки зрения эргономики.
@@ -134,7 +70,7 @@
                         </p>
 
                         <div class="post-img">
-                            <img src="images/blog/blog1/preview/img3.png" alt="">
+                            <img th:src="@{/images/blog/blog1/preview/img3.png}" alt=""/>
                         </div>
                         <p class="media-info">
                             Данное фото с сайта <a href="http://www.bcs.org/" target="_blank">www.bcs.org</a>
@@ -147,21 +83,21 @@
                         </p>
 
                         <div class="post-img">
-                            <img src="images/blog/blog1/preview/img4.png" alt="">
+                            <img th:src="@{/images/blog/blog1/preview/img4.png}" alt=""/>
                         </div>
                         <p>
                             Мне, например, понравилась форма подлокотников.
                         </p>
 
                         <div class="post-img">
-                            <img src="images/blog/blog1/preview/img5.png" alt="">
+                            <img th:src="@{/images/blog/blog1/preview/img5.png}" alt=""/>
                         </div>
                         <p>
                             Рабочее пространство за столом спроектировано таким образом, что оператор сидя может достать до любой поверхности.
                         </p>
 
                         <div class="post-img">
-                            <img src="images/blog/blog1/preview/img6.png" alt="">
+                            <img th:src="@{/images/blog/blog1/preview/img6.png}" alt=""/>
                         </div>
                         <p>
                             В следующих постах продолжу обзор исторически значимых техничексих и не только технических объектов.
@@ -179,16 +115,16 @@
                     <h4>Недавние записи</h4>
 
                     <div class="sidebar-widget clearfix">
-                        <a href="/blog1.html"><img src="images/blog/blog1/preview/img1.png" alt=""></a>
+                        <a th:href="@{/blog/1}"><img th:src="@{/images/blog/blog1/preview/img1.png}" alt=""/></a>
 
-                        <p class="sidebar-widget-title"><a href="/blog1.html">С чего начиналась эргономика</a></p>
+                        <p class="sidebar-widget-title"><a th:href="@{/blog/1}">С чего начиналась эргономика</a></p>
 
                         <p class="date">23 сентября, 2014</p>
                     </div>
                     <div class="sidebar-widget clearfix">
-                        <a href="/blog2.html"><img src="images/blog/blog2/preview/img1.png" alt=""></a>
+                        <a th:href="@{/blog/2}"><img th:src="@{/images/blog/blog2/preview/img1.png}" alt=""/></a>
 
-                        <p class="sidebar-widget-title"><a href="/blog2.html">Безопасность детей на городских улицах</a></p>
+                        <p class="sidebar-widget-title"><a th:href="@{/blog/2}">Безопасность детей на городских улицах</a></p>
 
                         <p class="date">24 сентября, 2014</p>
                     </div>
@@ -204,40 +140,14 @@
 <!-- /blog -->
 
 <!--Start footer-->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <!--Start footer social-->
-                <!--<ul class="list-inline footer-social">
-                    <li><a href="#" title="facebook"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" title="twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" title="google plus"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#" title="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                </ul>-->
-                <!-- End footer social -->
-
-                <!-- footer copyright text -->
-                <p>
-                    Все права защищены &copy; 2014<br/>
-                    <a href="index.html" title="copyright">Бюро Эргономики и Человеческого Фактора</a>
-                </p>
-                <!-- end of the footer copyright text -->
-            </div>
-        </div>
-    </div>
-</footer>
+<div th:replace="layout :: footer"></div>
 <!--End footer-->
 
 <!-- Scroll top -->
 <a href="#" class="scrollup"> <i class="fa fa-chevron-up"> </i> </a>
 
 <!--Plugins-->
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script type="text/javascript" src="js/jquery.sticky.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+<div th:replace="layout :: plugins" th:remove="tag"></div>
 
 </body>
 </html>

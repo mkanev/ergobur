@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html ng-app="ErgoBureauApp" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body data-spy="scroll" data-target=".navbar-custom">
+
+<!--Start Page loader -->
+<div id="pageloader">
+    <div class="loader">
+        <img th:src="@{/images/progress.gif}" alt='loader'/>
+    </div>
+</div>
+<!--End Page loader -->
+
+<!--Start Navigation-->
+<div th:replace="layout :: navigation"></div>
+<!--End Navigation-->
+
+<!-- page-header -->
+<section id="page-header">
+    <div class="container">
+        <h1>Личный блог эргономиста</h1>
+    </div>
+</section>
+<!-- /page-header -->
+
+<!--Start blog -->
+<section id="blog" class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post -->
+            <div class="col-md-8 col-sm-8">
+                <div class="post-content">
+
+                    <!-- Post Meta-->
+                    <div class="post-meta">
+                        <a href="#"><i class="fa fa-calendar"></i> &nbsp; &nbsp; 24 сентября, 2014</a> &nbsp;
+                        <a href="#"><i class="fa fa-user"></i> &nbsp; &nbsp; by Admin</a> &nbsp;
+                        <!--<a href="#"><i class="fa fa-comments"></i> &nbsp; &nbsp; 3 Comments</a> &nbsp;-->
+
+                    </div>
+                    <!-- /Post Meta-->
+
+                    <!-- Post Description -->
+                    <div class="post-description">
+
+                        <h3>Безопасность детей на городских улицах</h3>
+
+                        <p>
+                            Что может быть важнее, чем безопасность наших детей? Каждый год этот вопрос набирает актуальность с наступлением осени, когда день становится короче, а темнеет раньше.
+                            В темное время маленьким пешеходам угрожает еще больше опасностей.
+                        </p>
+
+                        <p>
+                            Я читал, что еще несколько тысяч лет назад Евклид описывал законы распространения и отражения света. Тогда интересно, почему сейчас, спустя столько времени, эти законы
+                            не используются повсеместно?
+                        </p>
+
+                        <p>
+                            Мне кажется, что прежде чем вводить законы на ношение и неношение детьми какой-либо одежды в школе, нужно, прежде всего, обязать детские группы, выходящие на улицу,
+                            одеваться подобным образом.
+                        </p>
+
+                        <p>
+                            Это фото было сделано мной в Лондоне – маленькие англичане шли на экскурсию в Собор святого Петра. Жилеты «возвращают» свет, водители видят их издалека и имеют
+                            возможность вовремя остановиться.
+                        </p>
+
+                        <div class="post-img">
+                            <img th:src="@{/images/blog/blog2/preview/img1.png}" alt=""/>
+                        </div>
+
+                        <p>
+                            С раннего детства детям надо прививать культуру собственной безопасности-только так можно защитить детей от несчастий на дорогах, воспитать ответственных пешеходов и
+                            будущих внимательных водителей.
+                        </p>
+                    </div>
+                    <!-- /Post Description -->
+
+                </div>
+            </div>
+            <!-- /Blog Post -->
+
+            <!-- Right Sidebar -->
+            <div class="col-md-4 col-sm-4">
+
+                <!--Start popular Post -->
+                <div class="widget-main">
+                    <h4>Недавние записи</h4>
+
+                    <div class="sidebar-widget clearfix">
+                        <a th:href="@{/blog/1}"><img th:src="@{/images/blog/blog1/preview/img1.png}" alt=""/></a>
+
+                        <p class="sidebar-widget-title"><a th:href="@{/blog/1}">С чего начиналась эргономика</a></p>
+
+                        <p class="date">23 сентября, 2014</p>
+                    </div>
+                    <div class="sidebar-widget clearfix">
+                        <a th:href="@{/blog/2}"><img th:src="@{/images/blog/blog2/preview/img1.png}" alt=""/></a>
+
+                        <p class="sidebar-widget-title"><a th:href="@{/blog/2}">Безопасность детей на городских улицах</a></p>
+
+                        <p class="date">24 сентября, 2014</p>
+                    </div>
+                </div>
+                <!-- / popular Post -->
+
+            </div>
+            <!-- /right Sidebar -->
+        </div>
+        <!-- /row -->
+    </div>
+</section>
+<!-- /blog -->
+
+<!--Start footer-->
+<div th:replace="layout :: footer"></div>
+<!--End footer-->
+
+<!-- Scroll top -->
+<a href="#" class="scrollup"> <i class="fa fa-chevron-up"> </i> </a>
+
+<!--Plugins-->
+<div th:replace="layout :: plugins" th:remove="tag"></div>
+
+</body>
+</html>
+
