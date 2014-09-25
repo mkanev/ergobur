@@ -119,12 +119,26 @@
             <div class="col-md-4 col-sm-4">
 
                 <!--Start popular Post -->
-                <div th:replace="blog :: latest"></div>
+                <div class="widget-main" th:fragment="latest">
+                    <h4>Недавние записи</h4>
+
+                    <div class="sidebar-widget clearfix" ng-repeat="record in latest">
+                        <a analytics-on="click" analytics-event="Record {{record.id}}" analytics-category="Blog" analytics-label="{{record.title}}" href="/blog/{{record.id}}">
+                            <img src="/images/{{record.previewImg}}" alt="{{record.title}}"/>
+                        </a>
+
+                        <p class="sidebar-widget-title">
+                            <a analytics-on="click" analytics-event="Record {{record.id}}" analytics-category="Blog" analytics-label="{{record.title}}" href="/blog/{{record.id}}">{{record.title}}</a>
+                        </p>
+
+                        <p class="date">{{record.createDate}}</p>
+                    </div>
+                </div>
                 <!-- / popular Post -->
 
                 <!-- Tags -->
                 <div class="widget-main">
-                    <h4>Тэги</h4>
+                    <h4>Tags</h4>
 
                     <div class="tags">
                         <a href="">Эргономика</a>

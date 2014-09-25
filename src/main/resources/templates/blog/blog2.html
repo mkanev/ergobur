@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html ng-app="ErgoBureauApp" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout :: head"></head>
+<head>
+    <title>Личный блог эргономиста :: Безопасность детей на городских улицах</title>
+    <meta name="author" content="Admin"/>
+    <meta name="keywords"
+          content="отражающая одежда,дети,безопасность,дорожные знаки"/>
+    <meta name="description"
+          content="Что может быть важнее, чем безопасность наших детей? Каждый год этот вопрос набирает актуальность с наступлением осени, когда день становится короче, а темнеет раньше. В темное время маленьким пешеходам угрожает еще больше опасностей."/>
+
+    <div th:replace="layout :: global"></div>
+    <div th:replace="layout :: styles"></div>
+    <div th:replace="layout :: fonts"></div>
+    <div th:replace="layout :: scripts"></div>
+</head>
 <body data-spy="scroll" data-target=".navbar-custom">
 
 <!--Start Page loader -->
-<div id="pageloader">
-    <div class="loader">
-        <img th:src="@{/images/progress.gif}" alt='loader'/>
-    </div>
-</div>
+<div th:replace="layout :: pageloader"></div>
 <!--End Page loader -->
 
 <!--Start Navigation-->
@@ -24,7 +32,7 @@
 <!-- /page-header -->
 
 <!--Start blog -->
-<section id="blog" class="section">
+<section id="blog" class="section ng-cloak" ng-controller="BlogController">
     <div class="container">
         <div class="row">
             <!-- Blog Post -->
@@ -84,25 +92,21 @@
             <div class="col-md-4 col-sm-4">
 
                 <!--Start popular Post -->
+                <div th:replace="blog :: latest"></div>
+                <!-- / popular Post -->
+
+                <!-- Tags -->
                 <div class="widget-main">
-                    <h4>Недавние записи</h4>
+                    <h4>Тэги</h4>
 
-                    <div class="sidebar-widget clearfix">
-                        <a th:href="@{/blog/1}"><img th:src="@{/images/blog/blog1/preview/img1.png}" alt=""/></a>
-
-                        <p class="sidebar-widget-title"><a th:href="@{/blog/1}">С чего начиналась эргономика</a></p>
-
-                        <p class="date">23 сентября, 2014</p>
-                    </div>
-                    <div class="sidebar-widget clearfix">
-                        <a th:href="@{/blog/2}"><img th:src="@{/images/blog/blog2/preview/img1.png}" alt=""/></a>
-
-                        <p class="sidebar-widget-title"><a th:href="@{/blog/2}">Безопасность детей на городских улицах</a></p>
-
-                        <p class="date">24 сентября, 2014</p>
+                    <div class="tags">
+                        <a href="">Отражающая одежда</a>
+                        <a href="">Дети</a>
+                        <a href="">Безопасность</a>
+                        <a href="">Дорожные знаки</a>
                     </div>
                 </div>
-                <!-- / popular Post -->
+                <!-- /Tags -->
 
             </div>
             <!-- /right Sidebar -->
@@ -120,7 +124,7 @@
 <a href="#" class="scrollup"> <i class="fa fa-chevron-up"> </i> </a>
 
 <!--Plugins-->
-<div th:replace="layout :: plugins" th:remove="tag"></div>
+<div th:replace="layout :: plugins"></div>
 
 </body>
 </html>
