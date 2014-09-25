@@ -16,6 +16,8 @@
 
 package sample.ui;
 
+import com.ergobureau.SampleWebStaticApplication;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
@@ -47,8 +49,7 @@ public class SampleWebStaticApplicationTests {
 
   @Test
   public void testHome() throws Exception {
-    ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
-        "http://localhost:" + this.port, String.class);
+    ResponseEntity<String> entity = new TestRestTemplate().getForEntity("http://localhost:" + this.port, String.class);
     assertEquals(HttpStatus.OK, entity.getStatusCode());
   }
 

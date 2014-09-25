@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    com.ergobureau: INFO
+
+mail:
+  host: smtp.gmail.com
+  port: 587
+  protocol: SMTP
+  username: office@ergobureau.com
+  password: t46Gd*U8KJd6w1bS7

@@ -821,6 +821,7 @@ input[type="color"]:focus,
     font-size: 21px;
     text-transform: none;
     min-height: 46px;
+    max-height: 46px;
 }
 
 /*========================================================================*/
@@ -1604,7 +1605,7 @@ footer ul.footer-social li:last-child a {
 /*   Media queries
 /*========================================================================*/
 
-@media only screen and (min-width: 1051px) and (max-width: 1280px) {
+@media only screen and (min-width: 1051px) and (max-width: 1370px) {
 
     #owl-main-text {
         height: 125px;

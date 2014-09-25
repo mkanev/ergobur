@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html ng-app="ErgoBureauApp" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Личный блог эргономиста :: С чего начиналась эргономика</title>
+    <meta name="author" content="Admin"/>
+    <meta name="keywords"
+          content="эргономика,оператор,история эргономики,рабочее место"/>
+    <meta name="description"
+          content="Очень часто, когда задаешь вопрос: «С чем ассоциируешь эргономику?», в ответ получаешь: «Компьютер, стол, кресло…». Для многих эргономика – в первую очередь правила, организации рабочего места за компьютером. Хочется начать с того, с чего все началось для эргономики персональных компьютеров."/>
+
+    <div th:replace="layout :: global"></div>
+    <div th:replace="layout :: styles"></div>
+    <div th:replace="layout :: fonts"></div>
+    <div th:replace="layout :: scripts"></div>
+</head>
+<body data-spy="scroll" data-target=".navbar-custom">
+
+<!--Start Page loader -->
+<div th:replace="layout :: pageloader"></div>
+<!--End Page loader -->
+
+<!--Start Navigation-->
+<div th:replace="layout :: navigation"></div>
+<!--End Navigation-->
+
+<!-- page-header -->
+<section id="page-header">
+    <div class="container">
+        <h1>Личный блог эргономиста</h1>
+    </div>
+</section>
+<!-- /page-header -->
+
+<!--Start blog -->
+<section id="blog" class="section ng-cloak" ng-controller="BlogController">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post -->
+            <div class="col-md-8 col-sm-8">
+                <div class="post-content">
+                    <!-- Post Meta-->
+                    <div class="post-meta">
+                        <a href="#"><i class="fa fa-calendar"></i> &nbsp; &nbsp; 23 сентября, 2014</a> &nbsp;
+                        <a href="#"><i class="fa fa-user"></i> &nbsp; &nbsp; by Admin</a> &nbsp;
+                        <!--<a href="#"><i class="fa fa-comments"></i> &nbsp; &nbsp; 3 Comments</a> &nbsp;-->
+                    </div>
+                    <!-- /Post Meta-->
+
+                    <!-- Post Description -->
+                    <div class="post-description">
+                        <h3>С чего начиналась эргономика</h3>
+
+                        <p>
+                            Очень часто, когда задаешь вопрос: «С чем ассоциируешь эргономику?», в ответ получаешь: «Компьютер, стол, кресло…».
+                            Для многих эргономика – в первую очередь правила, организации рабочего места за компьютером.
+                            Хочется начать с того, с чего все началось для эргономики персональных компьютеров.
+                        </p>
+
+                        <p>
+                            Знакомьтесь – Pegasus Computer. 1959 года рождения. Первый компьютер во вселенной.
+                        </p>
+
+                        <div class="post-img">
+                            <img th:src="@{/images/blog/blog1/preview/img1.png}" alt=""/>
+                        </div>
+                        <p>
+                            В мире осталось всего два таких: один в Манчестере, другой в Лондоне.
+                            Насколько я знаю, его умения ограничивались небольшим расчетом значений и выводом значения ПИ, а точнее кучей цифр после запятой.
+                            Опустим все его технические характеристики. Их с легкостью можно найти в интернете. Ну или тут.
+                        </p>
+
+                        <div class="post-img">
+                            <img th:src="@{/images/blog/blog1/preview/img2.png}" alt=""/>
+                        </div>
+                        <p>
+                            Попытаемся взглянуть на него с точки зрения эргономики.
+                            Первое, что приходит на ум - с такой штукой могут работать очень суровые и неулыбчивые люди. Ну, почему-то, мне так кажется.
+                        </p>
+
+                        <div class="post-img">
+                            <img th:src="@{/images/blog/blog1/preview/img3.png}" alt=""/>
+                        </div>
+                        <p class="media-info">
+                            Данное фото с сайта <a href="http://www.bcs.org/" target="_blank">www.bcs.org</a>
+                        </p>
+
+                        <p>
+                            Но, если серьезно, то даже более чем 50 лет назад в Англии думали об эргономике.
+                            Оператор работал стоя, сидя, он много двигался. Если операторов несколько и функции разделены на всех, то места хватало каждому.
+                            Можно, конечно, начать придираться к креслу, но эта конфигурация объясняется именно мобильностью оператора.
+                        </p>
+
+                        <div class="post-img">
+                            <img th:src="@{/images/blog/blog1/preview/img4.png}" alt=""/>
+                        </div>
+                        <p>
+                            Мне, например, понравилась форма подлокотников.
+                        </p>
+
+                        <div class="post-img">
+                            <img th:src="@{/images/blog/blog1/preview/img5.png}" alt=""/>
+                        </div>
+                        <p>
+                            Рабочее пространство за столом спроектировано таким образом, что оператор сидя может достать до любой поверхности.
+                        </p>
+
+                        <div class="post-img">
+                            <img th:src="@{/images/blog/blog1/preview/img6.png}" alt=""/>
+                        </div>
+                        <p>
+                            В следующих постах продолжу обзор исторически значимых техничексих и не только технических объектов.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- /Post Description -->
+
+            <!-- Right Sidebar -->
+            <div class="col-md-4 col-sm-4">
+
+                <!--Start popular Post -->
+                <div class="widget-main" th:fragment="latest">
+                    <h4>Недавние записи</h4>
+
+                    <div class="sidebar-widget clearfix" ng-repeat="record in latest">
+                        <a analytics-on="click" analytics-event="Record {{record.id}}" analytics-category="Blog" analytics-label="{{record.title}}" href="/blog/{{record.id}}">
+                            <img src="/images/{{record.previewImg}}" alt="{{record.title}}"/>
+                        </a>
+
+                        <p class="sidebar-widget-title">
+                            <a analytics-on="click" analytics-event="Record {{record.id}}" analytics-category="Blog" analytics-label="{{record.title}}" href="/blog/{{record.id}}">{{record.title}}</a>
+                        </p>
+
+                        <p class="date">{{record.createDate}}</p>
+                    </div>
+                </div>
+                <!-- / popular Post -->
+
+                <!-- Tags -->
+                <div class="widget-main">
+                    <h4>Tags</h4>
+
+                    <div class="tags">
+                        <a href="">Эргономика</a>
+                        <a href="">Оператор</a>
+                        <a href="">История эргономики</a>
+                        <a href="">Рабочее место</a>
+                    </div>
+                </div>
+                <!-- /Tags -->
+
+            </div>
+            <!-- /right Sidebar -->
+        </div>
+        <!-- /row -->
+    </div>
+</section>
+<!-- /blog -->
+
+<!--Start footer-->
+<div th:replace="layout :: footer"></div>
+<!--End footer-->
+
+<!-- Scroll top -->
+<a href="#" class="scrollup"> <i class="fa fa-chevron-up"> </i> </a>
+
+<!--Plugins-->
+<div th:replace="layout :: plugins"></div>
+
+</body>
+</html>
+
