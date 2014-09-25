@@ -52,7 +52,7 @@ function WorksController($scope) {
     },
     {
       title: 'Image title',
-      categories: ['interface'],
+      categories: ['office'],
       previewImg: 'portfolio/preview/img9.png',
       img: 'portfolio/img9.png'
     },
@@ -64,7 +64,7 @@ function WorksController($scope) {
     },
     {
       title: 'Image title',
-      categories: ['office'],
+      categories: ['interface'],
       previewImg: 'portfolio/preview/img11.png',
       img: 'portfolio/img11.png'
     },
