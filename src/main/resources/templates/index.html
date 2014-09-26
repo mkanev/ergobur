@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="ErgoBureauApp" xmlns:th="http://www.thymeleaf.org">
+<html ng-app="ErgoBureauApp" xmlns:th="http://www.thymeleaf.org" itemscope="itemscope" itemtype="http://data-vocabulary.org/Organization">
 <head>
+    <meta charset="utf-8"/>
     <title>Бюро Эргономики и Человеческого Фактора</title>
-    <meta name="author" content="Бюро Эргономики и Человеческого Фактора"/>
+    <meta name="author" itemprop="name" content="Бюро Эргономики и Человеческого Фактора"/>
     <meta name="keywords"
           content="эргономика,эргономическое проектирование,эргономика рабочего места,организация рабочих мест в офисе,планирование рабочего места,оптимизация рабочего места,эргономика человека,эргономика труда,эргономика пространства,эргономика среды,эргономичный дом,эргономичный офис,эргономическое рабочее место,эргономическое обеспечение"/>
     <meta name="description"
           content="Бюро Эргономики и Человеческого Фактора разрабатывает и внедряет реальные эргономические проекты в различные сферы деятельности. Наши практические решения обеспечивают безопасность, комфорт и повышают эффективность процессов."/>
+    <meta itemprop="url" content="http://www.ergobureau.com"/>
 
     <div th:replace="layout :: global"></div>
     <div th:replace="layout :: styles"></div>
@@ -663,7 +665,7 @@
                     <div class="col-md-4">
                         <div class="contact-info">
                             <div class="contact-icon"><i class="fa fa-phone"></i></div>
-                            <div class="contact-text"><p>+7 911 229 87 91</p></div>
+                            <div class="contact-text"><p itemprop="tel">+7 911 229 87 91</p></div>
                         </div>
                     </div>
 
