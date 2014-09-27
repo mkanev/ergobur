@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="ErgoBureauApp" xmlns:th="http://www.thymeleaf.org">
+<html ng-app="ErgoBureauApp" xmlns:th="http://www.thymeleaf.org" itemscope="itemscope" itemtype="http://schema.org/LocalBusiness">
 <head>
+    <meta charset="utf-8"/>
     <title>Бюро Эргономики и Человеческого Фактора</title>
-    <meta name="author" content="Бюро Эргономики и Человеческого Фактора"/>
+    <meta name="author" itemprop="name" content="Бюро Эргономики и Человеческого Фактора"/>
     <meta name="keywords"
           content="эргономика,эргономическое проектирование,эргономика рабочего места,организация рабочих мест в офисе,планирование рабочего места,оптимизация рабочего места,эргономика человека,эргономика труда,эргономика пространства,эргономика среды,эргономичный дом,эргономичный офис,эргономическое рабочее место,эргономическое обеспечение"/>
-    <meta name="description"
+    <meta name="description" itemprop="description"
           content="Бюро Эргономики и Человеческого Фактора разрабатывает и внедряет реальные эргономические проекты в различные сферы деятельности. Наши практические решения обеспечивают безопасность, комфорт и повышают эффективность процессов."/>
+    <meta itemprop="url" content="http://www.ergobureau.com"/>
 
     <div th:replace="layout :: global"></div>
     <div th:replace="layout :: styles"></div>
@@ -252,7 +254,7 @@
             <!--portfolio-filter nav-->
 
             <div id="grid">
-                <div ng-repeat="work in works" class="col-md-4 col-sm-6 popup-gallery mix" ng-class="work.categories">
+                <div ng-repeat="work in works" class="col-md-4 col-sm-6 popup-gallery mix" ng-class="work.categories" ng-cloak="ng-cloak">
                     <a href="/images/{{work.img}}" title="{{work.title}}">
                         <div class="image-wrapper">
                             <img src="/images/{{work.previewImg}}" class="img-responsive" alt="{{work.title}}"/>
@@ -574,7 +576,7 @@
 <!--End testimonial-->
 
 <!--Start blog-->
-<section id="blog" class="section ng-cloak" ng-controller="BlogController"
+<section id="blog" class="section" ng-controller="BlogController"
          analytics-on="scrollby" analytics-event="Blog" analytics-category="Scroll">
     <div class="container">
         <div class="row">
@@ -587,7 +589,7 @@
             <!--End heading-->
 
             <!--Blog post #1-->
-            <div class="col-md-6" ng-repeat="record in latest">
+            <div class="col-md-6" ng-repeat="record in latest" ng-cloak="ng-cloak">
                 <div class="post-blog">
                     <div class="entry-media">
                         <a analytics-on="click" analytics-event="Record {{record.id}}" analytics-category="Blog" analytics-label="{{record.title}}" href="/blog/{{record.id}}">
@@ -644,6 +646,7 @@
                     <input id="name" type="text" class="form-control" placeholder="ФИО" ng-model="name" required="required"/>
                     <input id="email" type="email" class="form-control" placeholder="Email" ng-model="email" required="required"/>
                     <textarea id="message" class="form-control" rows="7" placeholder="Сообщение" ng-model="message"></textarea>
+
                     <div>
                         <button analytics-on="click" analytics-event="Opportunity" analytics-category="CRM" type="submit" class="btn btn-default" ng-click="submit(contactForm)">Отправить</button>
                     </div>
@@ -663,7 +666,7 @@
                     <div class="col-md-4">
                         <div class="contact-info">
                             <div class="contact-icon"><i class="fa fa-phone"></i></div>
-                            <div class="contact-text"><p>+7 911 229 87 91</p></div>
+                            <div class="contact-text"><p itemprop="telephone">+7 911 229 87 91</p></div>
                         </div>
                     </div>
 
@@ -673,7 +676,7 @@
                             <div class="contact-icon"><i class="fa fa-envelope"></i></div>
                             <div class="contact-text">
                                 <p>
-                                    <a analytics-on="click" analytics-event="Mail" analytics-category="CRM" href="mailto:office@ergobureau.com">office@ergobureau.com</a>
+                                    <a analytics-on="click" analytics-event="Mail" analytics-category="CRM" href="mailto:office@ergobureau.com" itemprop="email">office@ergobureau.com</a>
                                 </p>
                             </div>
                         </div>

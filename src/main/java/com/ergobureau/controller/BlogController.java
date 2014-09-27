@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping("/blog")
-public class BlogController {
+public class BlogController extends BasePage {
 
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   public String record(@PathVariable("id") Long recordId) {

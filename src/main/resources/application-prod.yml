@@ -1,0 +1,13 @@
+logging:
+  level:
+    com.ergobureau: INFO
+
+application:
+  analytics:
+    code: UA-54768184-1
+
+spring:
+  profiles: prod
+  thymeleaf:
+    mode: XHTML
+    cache: true

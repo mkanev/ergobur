@@ -1,91 +1,83 @@
-/*
- * Copyright 2012-2013 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.ergobureau;
+
+import com.ergobureau.configuration.Constants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.mail.MailMessage;
-import org.springframework.mail.MailSender;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.core.env.SimpleCommandLinePropertySource;
 
 import java.io.IOException;
-import java.util.Properties;
+import java.util.Arrays;
 
-import javax.annotation.Resource;
+import javax.annotation.PostConstruct;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan(basePackages = {"com.ergobureau.controller"})
+@ComponentScan
 public class SampleWebStaticApplication extends SpringBootServletInitializer {
 
-  private static final Logger LOG = LoggerFactory.getLogger(SampleWebStaticApplication.class);
+  private final Logger log = LoggerFactory.getLogger(SampleWebStaticApplication.class);
 
-  private static final String PROPERTY_NAME_MAIL_HOST = "mail.host";
-  private static final String PROPERTY_NAME_MAIL_PORT = "mail.port";
-  private static final String PROPERTY_NAME_MAIL_PROTOCOL = "mail.protocol";
-  private static final String PROPERTY_NAME_MAIL_USERNAME = "mail.username";
-  private static final String PROPERTY_NAME_MAIL_PASSWORD = "mail.password";
+  @Autowired
+  private Environment env;
 
-  @Resource
-  private Environment environment;
+  @PostConstruct
+  public void initApplication() throws IOException {
+    if (env.getActiveProfiles().length == 0) {
+      log.warn("No Spring profile configured, running with default configuration");
+    } else {
+      log.info("Running with Spring profile(s) : {}", Arrays.toString(env.getActiveProfiles()));
+    }
+  }
 
   public static void main(String[] args) throws Exception {
-    SpringApplication.run(SampleWebStaticApplication.class, args);
+    SpringApplication app = new SpringApplication(SampleWebStaticApplication.class);
+    app.setShowBanner(false);
+
+    SimpleCommandLinePropertySource source = new SimpleCommandLinePropertySource(args);
+
+    // Check if the selected profile has been set as argument.
+    // if not the development profile will be added
+    addDefaultProfile(app, source);
+
+    app.run(args);
   }
 
   @Override
   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-    return application.sources(SampleWebStaticApplication.class);
+    return application.profiles(addDefaultProfile())
+        .showBanner(false).sources(SampleWebStaticApplication.class);
   }
 
-  @Bean
-  public MailSender mailSender() {
-    JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-    mailSender.setHost(environment.getProperty(PROPERTY_NAME_MAIL_HOST));
-    mailSender.setPort(environment.getProperty(PROPERTY_NAME_MAIL_PORT, Integer.class));
-//    mailSender.setProtocol(environment.getProperty(PROPERTY_NAME_MAIL_PROTOCOL));
-    mailSender.setUsername(environment.getProperty(PROPERTY_NAME_MAIL_USERNAME));
-    mailSender.setPassword(environment.getProperty(PROPERTY_NAME_MAIL_PASSWORD));
-    mailSender.setDefaultEncoding("utf-8");
-    try {
-      Properties properties = new Properties();
-      properties.load((new ClassPathResource("javamail.properties")).getInputStream());
-      mailSender.setJavaMailProperties(properties);
-    } catch (IOException ioEx) {
-      LOG.warn("Нет настроек JavaMail");
+  /**
+   * Set a default profile if it has not been set. <p/> <p> Please use -Dspring.profiles.active=dev </p>
+   */
+  private String addDefaultProfile() {
+    String profile = System.getProperty("spring.profiles.active");
+    if (profile != null) {
+      log.info("Running with Spring profile(s) : {}", profile);
+      return profile;
     }
-    return mailSender;
+
+    log.warn("No Spring profile configured, running with default configuration");
+    return Constants.SPRING_PROFILE_DEVELOPMENT;
   }
 
-  @Bean
-  public SimpleMailMessage emailMessageTemplate() {
-    SimpleMailMessage mailMessage = new SimpleMailMessage();
-    mailMessage.setFrom("office@ergobureau.com");
-    mailMessage.setSubject("Мы получили ваше сообщение");
-    return mailMessage;
+  /**
+   * Set a default profile if it has not been set
+   */
+  private static void addDefaultProfile(SpringApplication app, SimpleCommandLinePropertySource source) {
+    if (!source.containsProperty("spring.profiles.active")) {
+      app.setAdditionalProfiles(Constants.SPRING_PROFILE_DEVELOPMENT);
+    }
   }
+
 }

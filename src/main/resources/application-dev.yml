@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    com.ergobureau: DEBUG
+
+application:
+  analytics:
+    code: UA-54768184-2
+
+spring:
+  profiles: dev
+  thymeleaf:
+    mode: XHTML
+    cache: false

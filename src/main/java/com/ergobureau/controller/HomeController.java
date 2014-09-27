@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/")
-public class HomeController {
+public class HomeController extends BasePage {
 
   @RequestMapping
   public String home() {
