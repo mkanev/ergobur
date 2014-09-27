@@ -254,7 +254,7 @@
             <!--portfolio-filter nav-->
 
             <div id="grid">
-                <div ng-repeat="work in works" class="col-md-4 col-sm-6 popup-gallery mix" ng-class="work.categories">
+                <div ng-repeat="work in works" class="col-md-4 col-sm-6 popup-gallery mix" ng-class="work.categories" ng-cloak="ng-cloak">
                     <a href="/images/{{work.img}}" title="{{work.title}}">
                         <div class="image-wrapper">
                             <img src="/images/{{work.previewImg}}" class="img-responsive" alt="{{work.title}}"/>
@@ -576,7 +576,7 @@
 <!--End testimonial-->
 
 <!--Start blog-->
-<section id="blog" class="section ng-cloak" ng-controller="BlogController"
+<section id="blog" class="section" ng-controller="BlogController"
          analytics-on="scrollby" analytics-event="Blog" analytics-category="Scroll">
     <div class="container">
         <div class="row">
@@ -589,7 +589,7 @@
             <!--End heading-->
 
             <!--Blog post #1-->
-            <div class="col-md-6" ng-repeat="record in latest">
+            <div class="col-md-6" ng-repeat="record in latest" ng-cloak="ng-cloak">
                 <div class="post-blog">
                     <div class="entry-media">
                         <a analytics-on="click" analytics-event="Record {{record.id}}" analytics-category="Blog" analytics-label="{{record.title}}" href="/blog/{{record.id}}">
@@ -646,6 +646,7 @@
                     <input id="name" type="text" class="form-control" placeholder="ФИО" ng-model="name" required="required"/>
                     <input id="email" type="email" class="form-control" placeholder="Email" ng-model="email" required="required"/>
                     <textarea id="message" class="form-control" rows="7" placeholder="Сообщение" ng-model="message"></textarea>
+
                     <div>
                         <button analytics-on="click" analytics-event="Opportunity" analytics-category="CRM" type="submit" class="btn btn-default" ng-click="submit(contactForm)">Отправить</button>
                     </div>
