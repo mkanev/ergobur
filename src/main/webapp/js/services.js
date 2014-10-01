@@ -36,73 +36,73 @@ function WorksService() {
 
   var works = [
     {
-      title: 'Image title',
+      title: '',
       categories: [],
       previewImg: 'portfolio/preview/img1.png',
       img: 'portfolio/img1.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: ['office'],
       previewImg: 'portfolio/preview/img2.png',
       img: 'portfolio/img2.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: [],
       previewImg: 'portfolio/preview/img3.png',
       img: 'portfolio/img3.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: [],
       previewImg: 'portfolio/preview/img4.png',
       img: 'portfolio/img4.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: ['workspace'],
       previewImg: 'portfolio/preview/img5.png',
       img: 'portfolio/img5.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: [],
       previewImg: 'portfolio/preview/img6.png',
       img: 'portfolio/img6.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: ['interface'],
       previewImg: 'portfolio/preview/img7.png',
       img: 'portfolio/img7.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: [],
       previewImg: 'portfolio/preview/img8.png',
       img: 'portfolio/img8.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: ['office'],
       previewImg: 'portfolio/preview/img9.png',
       img: 'portfolio/img9.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: ['office'],
       previewImg: 'portfolio/preview/img10.png',
       img: 'portfolio/img10.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: ['interface'],
       previewImg: 'portfolio/preview/img11.png',
       img: 'portfolio/img11.png'
     },
     {
-      title: 'Image title',
+      title: '',
       categories: ['workspace'],
       previewImg: 'portfolio/preview/img12.png',
       img: 'portfolio/img12.png'
