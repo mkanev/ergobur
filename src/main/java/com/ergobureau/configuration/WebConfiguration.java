@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.embedded.ServletContextInitializer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Arrays;
 import java.util.EnumSet;
@@ -24,7 +26,7 @@ import javax.servlet.ServletException;
  * @author <a href="mailto:maksim.kanev@waveaccess.ru">Maksim Kanev</a>
  */
 @Configuration
-public class WebConfiguration implements ServletContextInitializer {
+public class WebConfiguration extends WebMvcConfigurerAdapter implements ServletContextInitializer {
 
   private final Logger log = LoggerFactory.getLogger(WebConfiguration.class);
 
@@ -69,5 +71,10 @@ public class WebConfiguration implements ServletContextInitializer {
     compressingFilter.addMappingForUrlPatterns(disps, true, "/app/rest/*");
     compressingFilter.addMappingForUrlPatterns(disps, true, "/metrics/*");
     compressingFilter.setAsyncSupported(true);
+  }
+
+  @Override
+  public void addViewControllers(ViewControllerRegistry registry) {
+    registry.addViewController("/").setViewName("index");
   }
 }
