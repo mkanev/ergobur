@@ -10,7 +10,6 @@ jdk:
 branches:
   only:
     - master
-    - develop
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
