@@ -453,7 +453,7 @@ input[type="color"]:focus,
 
 .slider-overlay {
     /*background: url(../images/overlay.png) rgba(0, 0, 0, .8);*/
-    background: url(../img/overlay.png) rgba(0, 0, 0, .8);
+    background: url('//assets.ergobureau.com/images/overlay.png') rgba(0, 0, 0, .8);
     position: absolute;
     left: 0;
     top: 0;
@@ -1145,7 +1145,7 @@ input[type="color"]:focus,
 
 #page-header {
     /*background: url('../images/pattern.png') repeat;*/
-    background: url('../img/pattern.png') repeat;
+    background: url('//assets.ergobureau.com/images/pattern.png') repeat;
     padding: 70px 0;
     text-align: center;
 }
@@ -1191,7 +1191,7 @@ input[type="color"]:focus,
 
 #related-project {
     /*background: url('../images/pattern.png') repeat;*/
-    background: url('../img/pattern.png') repeat;
+    background: url('//assets.ergobureau.com/images/pattern.png') repeat;
     padding: 100px 0 80px;
     position: relative;
 }
