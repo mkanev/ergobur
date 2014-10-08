@@ -1,5 +1,8 @@
 package com.ergobureau.controller;
 
+import com.ergobureau.common.ConfigUtils;
+import com.ergobureau.configuration.Constants;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,34 +15,42 @@ import org.springframework.web.bind.annotation.ModelAttribute;
  */
 public class BasePage implements InitializingBean {
 
-  private static final String PROP_PREFIX_APPLICATION = "application";
-  private static final String PROP_PREFIX_ANALYTICS = "analytics";
-  private static final String PROP_TACKING_CODE = "code";
-
   @Autowired
   private Environment env;
 
-  private RelaxedPropertyResolver propertyResolver;
   private String trackingCode;
+  private String cdnUrl;
 
   @Override
   public void afterPropertiesSet() throws Exception {
-    this.propertyResolver = new RelaxedPropertyResolver(env, PROP_PREFIX_APPLICATION);
     initData();
   }
 
   private void initData() {
     initAnalytics();
+    initCdn();
   }
 
   private void initAnalytics() {
-    String prefix = StringUtils.join(new String[]{PROP_PREFIX_APPLICATION, PROP_PREFIX_ANALYTICS}, ".") + ".";
-    RelaxedPropertyResolver propertyResolver = new RelaxedPropertyResolver(env, prefix);
-    trackingCode = propertyResolver.getProperty(PROP_TACKING_CODE);
+    RelaxedPropertyResolver propertyResolver = new RelaxedPropertyResolver(env, ConfigUtils.getApplicationPropertyBlockPrefix(Constants.PROP_BLOCK_ANALYTICS));
+    trackingCode = propertyResolver.getProperty(Constants.PROP_TACKING_CODE);
+  }
+
+  private void initCdn() {
+    RelaxedPropertyResolver propertyResolver = new RelaxedPropertyResolver(env, ConfigUtils.getWebPropertyBlockPrefix(Constants.PROP_BLOCK_CDN));
+    String host = propertyResolver.getProperty(Constants.PROP_CDN_HOST, Constants.PROP_CDN_HOST_DEFAULT_VALUE);
+    String port = propertyResolver.getProperty(Constants.PROP_CDN_PORT);
+    String scheme = propertyResolver.getProperty(Constants.PROP_CDN_SCHEME);
+    cdnUrl = (StringUtils.isNotBlank(scheme) ? scheme + ":" : StringUtils.EMPTY) + "//" + host + (StringUtils.isNotBlank(port) ? ":" + port : StringUtils.EMPTY);
   }
 
   @ModelAttribute("gaTrackingCode")
-  public String analyticsTrackingCode() {
+  public String getAnalyticsTrackingCode() {
     return trackingCode;
+  }
+
+  @ModelAttribute("cdnUrl")
+  public String getCdnUrl() {
+    return cdnUrl;
   }
 }

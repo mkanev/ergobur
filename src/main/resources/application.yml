@@ -1,4 +1,4 @@
-spring:
+application:
   mail:
     host: smtp.gmail.com
     port: 587
@@ -8,3 +8,9 @@ spring:
     tls: true
     auth: true
     quitwait: false
+
+web:
+  cdn:
+    host: assets.ergobureau.com
+    port:
+    scheme:

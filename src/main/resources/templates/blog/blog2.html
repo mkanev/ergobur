@@ -13,6 +13,7 @@
     <div th:replace="layout :: styles"></div>
     <div th:replace="layout :: fonts"></div>
     <div th:replace="layout :: scripts"></div>
+    <div th:replace="layout :: analytics"></div>
 </head>
 <body data-spy="scroll" data-target=".navbar-custom">
 
@@ -75,7 +76,7 @@
                         </p>
 
                         <div class="post-img">
-                            <img th:src="@{/img/blog/blog2/preview/img1.png}" alt=""/>
+                            <img th:src="@{${cdnUrl}+'/images/blog/blog2/preview/img1.png'}" alt=""/>
                         </div>
 
                         <p>

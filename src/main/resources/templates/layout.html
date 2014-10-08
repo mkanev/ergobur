@@ -35,7 +35,8 @@
 
     <div th:fragment="fonts" th:remove="tag">
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,400italic,500,500italic,700,700italic,900,900italic,300&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,400italic,500,500italic,700,700italic,900,900italic,300&amp;subset=latin,cyrillic" rel="stylesheet"
+              type="text/css"/>
     </div>
 
     <div th:fragment="scripts" th:remove="tag">
@@ -44,7 +45,9 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+    </div>
 
+    <div th:fragment="analytics" th:remove="tag">
         <script th:inline="javascript">
             /*<![CDATA[*/
             (function (i, s, o, g, r, a, m) {
@@ -69,7 +72,7 @@
 <!--Start Page loader -->
 <div id="pageloader" th:fragment="pageloader">
     <div class="loader">
-        <img th:src="@{/img/progress.gif}" alt='loader'/>
+        <img th:src="@{${cdnUrl}+'/images/progress.gif'}" alt='loader'/>
     </div>
 </div>
 <!--End Page loader -->
