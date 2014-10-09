@@ -46,7 +46,7 @@
 
                     <div class="sidebar-widget clearfix" ng-repeat="record in latest">
                         <a analytics-on="click" analytics-event="Record {{record.id}}" analytics-category="Blog" analytics-label="{{record.title}}" href="/blog/{{record.id}}">
-                            <img th:src="@{${cdnUrl}+'/images/{{record.previewImg}}'}" alt="{{record.title}}"/>
+                            <img th:src="@{${cdnUrl}+'/images/v'+${appVersion}+'/{{record.previewImg}}'}" alt="{{record.title}}"/>
                         </a>
 
                         <p class="sidebar-widget-title">

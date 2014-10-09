@@ -290,7 +290,6 @@ input[type="color"]:focus,
 .loader {
     position: absolute;
     width: auto;
-    height: height;
     margin: -25px 0 0 -25px;
     top: 50%;
     left: 50%;
@@ -452,8 +451,7 @@ input[type="color"]:focus,
 }
 
 .slider-overlay {
-    /*background: url(../images/overlay.png) rgba(0, 0, 0, .8);*/
-    background: url('//assets.ergobureau.com/images/overlay.png') rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .8);
     position: absolute;
     left: 0;
     top: 0;
@@ -897,7 +895,7 @@ input[type="color"]:focus,
     position: absolute;
     left: -9px;
     font-size: 1.4em;
-    opacity: 0 .
+    opacity: 0.8;
 }
 
 .testimonial-content:after {
@@ -1144,8 +1142,7 @@ input[type="color"]:focus,
 /*========================================================================*/
 
 #page-header {
-    /*background: url('../images/pattern.png') repeat;*/
-    background: url('//assets.ergobureau.com/images/pattern.png') repeat;
+    background-color: #E7E7E7;
     padding: 70px 0;
     text-align: center;
 }
@@ -1187,17 +1184,6 @@ input[type="color"]:focus,
     display: block;
     width: 100%;
     height: auto;
-}
-
-#related-project {
-    /*background: url('../images/pattern.png') repeat;*/
-    background: url('//assets.ergobureau.com/images/pattern.png') repeat;
-    padding: 100px 0 80px;
-    position: relative;
-}
-
-#related-project .image-wrapper {
-    margin-bottom: 20px;
 }
 
 .owl-theme .owl-controls .owl-page span {
@@ -1742,7 +1728,7 @@ footer ul.footer-social li:last-child a {
         width: 100%;
     }
 
-    owl-main-text {
+    #owl-main-text {
         margin-top: 20px;
     }
 

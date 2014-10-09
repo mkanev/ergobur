@@ -8,11 +8,14 @@ public final class Constants {
   /* System */
   public static final String SPRING_PROFILE_DEVELOPMENT = "dev";
   public static final String SPRING_PROFILE_PRODUCTION = "prod";
-  public static final String SYSTEM_ACCOUNT = "system";
   public static final String PROP_PREFIX_SPRING = "spring";
 
   /* Application */
   public static final String PROP_PREFIX_APPLICATION = "application";
+
+  /* System */
+  public static final String PROP_BLOCK_SYSTEM = "system";
+  public static final String PROP_SYSTEM_VERSION = "version";
 
   /* Analytics */
   public static final String PROP_BLOCK_ANALYTICS = "analytics";

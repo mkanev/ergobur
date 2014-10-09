@@ -26,9 +26,9 @@
 <div id="home" class="slider-main">
     <div class="slider-overlay"></div>
     <div id="owl-main" class="owl-carousel">
-        <div class="item"><img th:src="@{${cdnUrl}+'/images/slider/img1.png'}" class="" alt=""/></div>
-        <div class="item"><img th:src="@{${cdnUrl}+'/images/slider/img2.png'}" class="" alt=""/></div>
-        <div class="item"><img th:src="@{${cdnUrl}+'/images/slider/img3.png'}" class="" alt=""/></div>
+        <div class="item"><img th:src="@{${cdnUrl}+'/images/v'+${appVersion}+'/slider/img1.png'}" class="" alt=""/></div>
+        <div class="item"><img th:src="@{${cdnUrl}+'/images/v'+${appVersion}+'/slider/img2.png'}" class="" alt=""/></div>
+        <div class="item"><img th:src="@{${cdnUrl}+'/images/v'+${appVersion}+'/slider/img3.png'}" class="" alt=""/></div>
     </div>
     <div class="slide-content">
         <div id="owl-main-text" class="owl-carousel">
@@ -214,8 +214,8 @@
             <!--Start about slider-->
             <div class="col-md-6 about-slider">
                 <div id="about-carousel" class="owl-carousel">
-                    <div class="item"><img th:src="@{${cdnUrl}+'/images/about-slider/img1.png'}" alt=""/></div>
-                    <div class="item"><img th:src="@{${cdnUrl}+'/images/about-slider/img2.png'}" alt=""/></div>
+                    <div class="item"><img th:src="@{${cdnUrl}+'/images/v'+${appVersion}+'/about-slider/img1.png'}" alt=""/></div>
+                    <div class="item"><img th:src="@{${cdnUrl}+'/images/v'+${appVersion}+'/about-slider/img2.png'}" alt=""/></div>
                 </div>
             </div>
             <!--End about slider-->
@@ -254,9 +254,9 @@
 
             <div id="grid">
                 <div ng-repeat="work in works" class="col-md-4 col-sm-6 popup-gallery mix" ng-class="work.categories" ng-cloak="ng-cloak">
-                    <a th:href="@{${cdnUrl}+'/images/{{work.img}}'}" title="{{work.title}}">
+                    <a th:href="@{${cdnUrl}+'/images/v'+${appVersion}+'/{{work.img}}'}" title="{{work.title}}">
                         <div class="image-wrapper">
-                            <img th:src="@{${cdnUrl}+'/images/{{work.previewImg}}'}" class="img-responsive" alt="{{work.title}}"/>
+                            <img th:src="@{${cdnUrl}+'/images/v'+${appVersion}+'/{{work.previewImg}}'}" class="img-responsive" alt="{{work.title}}"/>
 
                             <div class="image-overlay">
                                 <span><i class="fa fa-eye"></i></span>
@@ -592,7 +592,7 @@
                 <div class="post-blog">
                     <div class="entry-media">
                         <a analytics-on="click" analytics-event="Record {{record.id}}" analytics-category="Blog" analytics-label="{{record.title}}" href="/blog/{{record.id}}">
-                            <img th:src="@{${cdnUrl}+'/images/{{record.previewImg}}'}" alt="{{record.title}}"/>
+                            <img th:src="@{${cdnUrl}+'/images/v'+${appVersion}+'/{{record.previewImg}}'}" alt="{{record.title}}"/>
                         </a>
                     </div>
                     <div class="entry-body">

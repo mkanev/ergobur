@@ -1,4 +1,6 @@
 application:
+  system:
+    version: ${project.version}
   mail:
     host: smtp.gmail.com
     port: 587
@@ -11,6 +13,6 @@ application:
 
 web:
   cdn:
-    host: assets.ergobureau.com
+    host: ${cdn.host}
     port:
     scheme:
