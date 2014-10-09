@@ -18,6 +18,7 @@ public class BasePage implements InitializingBean {
   @Autowired
   private Environment env;
 
+  private String appVersion;
   private String trackingCode;
   private String cdnUrl;
 
@@ -27,8 +28,14 @@ public class BasePage implements InitializingBean {
   }
 
   private void initData() {
+    initApplication();
     initAnalytics();
     initCdn();
+  }
+
+  private void initApplication() {
+    RelaxedPropertyResolver propertyResolver = new RelaxedPropertyResolver(env, ConfigUtils.getApplicationPropertyBlockPrefix(Constants.PROP_BLOCK_SYSTEM));
+    appVersion = propertyResolver.getProperty(Constants.PROP_SYSTEM_VERSION);
   }
 
   private void initAnalytics() {
@@ -52,5 +59,10 @@ public class BasePage implements InitializingBean {
   @ModelAttribute("cdnUrl")
   public String getCdnUrl() {
     return cdnUrl;
+  }
+
+  @ModelAttribute("appVersion")
+  public String getAppVersion() {
+    return appVersion;
   }
 }

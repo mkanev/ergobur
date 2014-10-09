@@ -33,14 +33,17 @@
         <maven.plugin.cobertura.version>2.6</maven.plugin.cobertura.version>
         <maven.plugin.surefire.version>2.17</maven.plugin.surefire.version>
         <javamail.version>1.5.2</javamail.version>
+        <cdn.host>assets.ergobureau.com</cdn.host>
     </properties>
 
     <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <addResources>false</addResources>
                     <jvmArguments>
                         -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
                     </jvmArguments>
@@ -79,7 +82,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <doCheck>true</doCheck>
+                    <doCheck>false</doCheck>
                     <doUpdate>false</doUpdate>
                     <getRevisionOnlyOnce>false</getRevisionOnlyOnce>
                     <revisionOnScmFailure>unknown</revisionOnScmFailure>
@@ -91,7 +94,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                    <warName>${project.artifactId}-${project.version}-${build.revision}</warName>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                     <archive>
                         <manifestEntries>
@@ -103,6 +105,16 @@
                         </manifestEntries>
                     </archive>
                     <packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
+                    <webResources>
+                        <resource>
+                            <filtering>true</filtering>
+                            <directory>src/main/webapp</directory>
+                            <includes>
+                                <include>**/*.css</include>
+                                <include>**/*.js</include>
+                            </includes>
+                        </resource>
+                    </webResources>
                 </configuration>
             </plugin>
             <plugin>
@@ -136,6 +148,26 @@
                 </dependencies>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>i18n/*.properties</include>
+                    <include>application.yml</include>
+                    <include>application-*.yml</include>
+                    <include>logback.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>i18n/*.properties</exclude>
+                    <exclude>application.properties</exclude>
+                    <exclude>logback.xml</exclude>
+                </excludes>
+            </resource>
+        </resources>
     </build>
     <dependencies>
         <dependency>

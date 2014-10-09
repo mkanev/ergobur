@@ -72,7 +72,7 @@
 <!--Start Page loader -->
 <div id="pageloader" th:fragment="pageloader">
     <div class="loader">
-        <img th:src="@{${cdnUrl}+'/images/progress.gif'}" alt='loader'/>
+        <img th:src="@{${cdnUrl}+'/images/v'+${appVersion}+'/progress.gif'}" alt='loader'/>
     </div>
 </div>
 <!--End Page loader -->
