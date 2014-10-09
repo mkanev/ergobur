@@ -80,7 +80,7 @@
                 </executions>
                 <configuration>
                     <doCheck>true</doCheck>
-                    <doUpdate>true</doUpdate>
+                    <doUpdate>false</doUpdate>
                     <getRevisionOnlyOnce>false</getRevisionOnlyOnce>
                     <revisionOnScmFailure>unknown</revisionOnScmFailure>
                     <buildNumberPropertyName>build.revision</buildNumberPropertyName>
